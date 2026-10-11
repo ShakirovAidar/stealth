@@ -27,8 +27,12 @@ function validate(d) {
 // Счётчик участников хранится в KV (binding COUNTER). Без KV вернёт null.
 async function getCount(env) {
   if (!env.COUNTER) return null;
-  const n = parseInt(await env.COUNTER.get("count"), 10);
-  return Number.isFinite(n) ? n : 0;
+  try {
+    const n = parseInt(await env.COUNTER.get("count"), 10);
+    return Number.isFinite(n) ? n : 0;
+  } catch {
+    return null;
+  }
 }
 
 export default {
@@ -110,8 +114,14 @@ export default {
         }
       );
       if (r.ok) {
-        if (number !== null) await env.COUNTER.put("count", String(number));
-        return json({ ok: true, number, count: number });
+        let saved = null;
+        if (number !== null) {
+          try {
+            await env.COUNTER.put("count", String(number));
+            saved = number;
+          } catch {}
+        }
+        return json({ ok: true, number: saved, count: saved });
       }
       return json({ ok: false, error: "telegram" }, 502);
     } catch {
