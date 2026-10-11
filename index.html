@@ -59,19 +59,19 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 :root{
   --black:#070b08; --jungle:#0e2a1c; --jungle-2:#143a27; --jungle-3:#1f5a3a;
   --gold:#c9a227; --gold-light:#e6c66a; --gold-deep:#8f6f1a;
   --text:#efe6d0; --mute:#9d9577; --line:rgba(201,162,39,.28);
   --err:#e8906f; --nav-h:84px; --ease:cubic-bezier(.22,1,.36,1);
-  --font:"Cormorant Garamond","Cormorant",Garamond,Georgia,serif;
+  --font:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
 html,body{height:100%;overflow:hidden}
 body{
-  font-family:var(--font);font-size:18px;line-height:1.3;font-weight:500;
+  font-family:var(--font);font-size:16px;line-height:1.45;font-weight:400;
   font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
   background:#040604;color:var(--text);
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
@@ -102,7 +102,8 @@ button{cursor:pointer;border:0;background:none}
 
 /* ——— Header ——— */
 .head{display:flex;align-items:center;justify-content:space-between;flex-shrink:0;min-height:28px}
-.wordmark{height:clamp(20px,6.2vw,28px);width:auto;display:block}
+.wordmark{height:clamp(28px,7vw,34px);width:auto;display:block;cursor:pointer;transition:opacity .2s ease}
+.wordmark:active{opacity:.7}
 .badge{
   font-style:italic;font-size:16px;font-weight:600;color:var(--gold-light);
   border:1px solid rgba(201,162,39,.55);padding:1px 12px 2px;border-radius:999px;
@@ -153,14 +154,12 @@ button{cursor:pointer;border:0;background:none}
   transform:skewX(-18deg);animation:shine 6s ease-in-out 2.6s infinite;
 }
 @keyframes shine{0%,55%{left:-40%}100%{left:130%}}
-.offer-num{flex:0 0 26%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 4px;border-right:1.5px dashed rgba(201,162,39,.55)}
-.offer-num span{margin:0 0 6px!important}
-.offer-num b{font-size:62px;line-height:.85;font-style:italic;font-weight:700;color:var(--gold-light);text-shadow:0 0 22px rgba(201,162,39,.4)}
-.offer-num span{font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--text);margin-top:4px}
+.offer-num{flex:0 0 32%;display:flex;align-items:center;justify-content:center;padding:10px 8px;border-right:1.5px dashed rgba(201,162,39,.55);background:transparent}
+.offer-num img{display:block;width:100%;max-width:118px;height:auto;max-height:108px;object-fit:contain;object-position:center;background:transparent;filter:drop-shadow(0 2px 10px rgba(0,0,0,.4))}
 .offer-txt{padding:11px 14px 12px;min-width:0}
-.offer-kicker{font-size:14px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold)}
-.offer-title{font-size:25px;line-height:1.02;font-weight:700;color:var(--text);margin:3px 0 4px}
-.offer-text{font-size:17px;line-height:1.18;color:rgba(239,230,208,.82)}
+.offer-kicker{font-size:15px;letter-spacing:.01em;font-weight:500;color:var(--gold)}
+.offer-title{font-size:24px;line-height:1.18;font-weight:500;color:var(--text);margin:4px 0 5px}
+.offer-text{font-size:16px;line-height:1.4;font-weight:500;color:rgba(239,230,208,.9)}
 /* ——— Hero (full-height photo, no longer used on home) ——— */
 .hero{position:relative;flex:1;min-height:0;overflow:hidden;background:var(--black)}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 100%;display:block}
@@ -762,7 +761,7 @@ function dispatch(a, val){
 
 function head(){
   return `<div class="head">
-    <img class="wordmark" src="assets/logo-text.webp" alt="STEALTH" height="28">
+    <img class="wordmark" src="assets/logo-mark.webp" alt="STEALTH" height="34" onclick="dispatch('BACK')" role="button" tabindex="0">
   </div>`;
 }
 
@@ -772,7 +771,7 @@ function view(){
       <div class="splash-main"><img class="splash-logo" src="assets/logo-large.webp" alt="STEALTH" width="520" height="400"></div>
       <div class="splash-bottom">
         <div class="offer">
-          <div class="offer-num"><span>iPhone</span><b>18</b></div>
+          <div class="offer-num"><img src="assets/iphone18.png" alt="iPhone 18" width="110" height="160"></div>
           <div class="offer-txt">
             <div class="offer-kicker">${t("kicker")}</div>
             <div class="offer-title">${t("offerTitle")}</div>
@@ -781,8 +780,6 @@ function view(){
         </div>
         <div class="joined" id="joined" hidden></div>
         <button class="btn" onclick="dispatch('START')">${t("start")}</button>
-        <div class="legal"><a href="/privacy" target="_blank" rel="noopener">${t("lPrivacy")}</a><a href="/terms" target="_blank" rel="noopener">${t("lTerms")}</a><a href="/rules" target="_blank" rel="noopener">${t("lRules")}</a></div>
-        <div class="credit">${t("credit")}</div>
       </div>
     </div>`;
   }
@@ -838,8 +835,7 @@ function view(){
       <div class="row"><span>${t("pay")}</span><i></i><span>${t("cod")}</span></div>
       <div class="row"><span>${t("delivery")}</span><i></i><span>${t("free")}</span></div>
       <div class="row total"><span>${t("total")}</span><span>1 000 THB</span></div>
-    </div>
-    <p class="consent">${t("consent")}</p>`;
+    </div>`;
   }
 
   if(S.step===3){
@@ -879,8 +875,7 @@ function view(){
         <div class="receipt-actions">
           <button class="btn" onclick="downloadReceipt(this)">${t("download")}</button>
           <button class="btn ghost" onclick="dispatch('RESET')">${t("home")}</button>
-          <div class="legal"><a href="/privacy" target="_blank" rel="noopener">${t("lPrivacy")}</a><a href="/terms" target="_blank" rel="noopener">${t("lTerms")}</a><a href="/rules" target="_blank" rel="noopener">${t("lRules")}</a></div>
-          <div class="credit">${t("credit")}</div>
+          <p class="consent">${t("consent")}</p>
         </div>
       </div>`;
     }
@@ -952,7 +947,7 @@ function wrapText(ctx, text, maxW){
 }
 async function receiptCanvas(){
   const o = S.order, v = VARIANTS.find(x=>x.id===S.v.variant);
-  const F = '"Cormorant Garamond",Garamond,Georgia,serif';
+  const F = '"Inter",system-ui,-apple-system,sans-serif';
   try{ await Promise.all(["500 20px","600 20px","700 20px","italic 600 20px"].map(f=>document.fonts.load(f+" "+F))); }catch{}
   const logo = await loadImg("assets/logo-mark.webp").catch(()=>null);
   const W=360, SC=3, M=26;
