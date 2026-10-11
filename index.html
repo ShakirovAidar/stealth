@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>STEALTH — Natural Deodorant, Powered by Magnesium</title>
+<meta name="description" content="Natural deodorant made for heat, humidity, and everyday life. Magnesium hydroxide, 0% baking soda, aluminum-free. Developed in Phuket.">
+<meta name="theme-color" content="#070b08">
+<meta property="og:title" content="STEALTH — Natural Deodorant, Powered by Magnesium">
+<meta property="og:description" content="Magnesium-based. 0% baking soda. Aluminum-free. Born in the tropics.">
+<meta property="og:image" content="assets/hero-trio.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#070b08; --jungle:#0e2a1c; --jungle-2:#143a27; --jungle-3:#1f5a3a;
+  --gold:#c9a227; --gold-light:#e6c66a; --gold-deep:#8f6f1a;
+  --text:#efe6d0; --mute:#9d9577; --line:rgba(201,162,39,.28);
+  --err:#e8906f; --nav-h:84px; --ease:cubic-bezier(.22,1,.36,1);
+  --font:"Cormorant Garamond","Cormorant",Garamond,Georgia,serif;
+}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden}
+body{
+  font-family:var(--font);font-size:18px;line-height:1.3;font-weight:500;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+  background:#040604;color:var(--text);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+button,input,a{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
+
+#app{
+  position:relative;max-width:480px;margin:0 auto;
+  height:100vh;height:100dvh;display:flex;flex-direction:column;
+  padding:calc(14px + env(safe-area-inset-top,0px)) 22px 0;
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+  background:
+    radial-gradient(ellipse 120% 55% at 50% -10%, rgba(31,90,58,.38), transparent 65%),
+    var(--black);
+  overflow:hidden;
+}
+#app.home{padding:0}
+#app.no-nav{padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}
+#app.paper-bg{
+  padding:calc(14px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px));
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 30%, rgba(60,140,90,.22), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .25 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    var(--jungle);
+}
+
+/* ——— Header ——— */
+.head{display:flex;align-items:center;justify-content:space-between;flex-shrink:0;min-height:28px}
+.wordmark{height:15px;width:auto;display:block}
+.badge{
+  font-style:italic;font-size:16px;font-weight:600;color:var(--gold-light);
+  border:1px solid rgba(201,162,39,.55);padding:1px 12px 2px;border-radius:999px;
+}
+
+/* ——— Progress ——— */
+.prog{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 12px;flex-shrink:0}
+.prog div{position:relative;border-top:2px solid rgba(201,162,39,.2);padding-top:5px;font-size:15px;color:var(--mute);font-style:italic}
+.prog div.on{color:var(--gold-light);font-weight:600}
+.prog div.on::before{content:"";position:absolute;left:0;right:0;top:-2px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform-origin:left}
+
+.main{flex:1;min-height:0;display:flex;flex-direction:column;overflow-x:hidden;overflow-y:auto;scrollbar-width:none}
+.main::-webkit-scrollbar{display:none}
+
+/* ——— Buttons ——— */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;width:100%;
+  background:linear-gradient(180deg,#e0bd55,#b8921f);color:var(--black);
+  border:1px solid #e6c66a;border-radius:3px;
+  padding:14px 20px;font-size:20px;font-weight:700;letter-spacing:.03em;
+  box-shadow:inset 0 0 0 3px #c9a227, inset 0 0 0 4px rgba(7,11,8,.5);
+  flex-shrink:0;text-decoration:none;transition:transform .2s var(--ease),opacity .5s ease,filter .4s ease;
+  position:relative;overflow:hidden;
+}
+.btn::before{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-18deg);transition:left .9s var(--ease)}
+.btn:hover::before,.btn:active::before{left:135%}
+.btn:hover{filter:brightness(1.06)}
+.btn.ghost::before{background:linear-gradient(100deg,transparent,rgba(201,162,39,.25),transparent)}
+.btn:active{transform:scale(.99)}
+.btn.ghost{background:transparent;color:var(--gold-light);border-color:rgba(201,162,39,.55);box-shadow:none;font-weight:600}
+.btn[disabled]{opacity:.35;pointer-events:none}
+
+.splash{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;
+  background:radial-gradient(ellipse 80% 40% at 50% 34%, rgba(31,90,58,.5), transparent 70%)}
+.splash-main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding-top:calc(10px + env(safe-area-inset-top,0px))}
+.splash-logo{width:min(62%,270px);max-height:100%;height:auto;object-fit:contain;display:block;filter:drop-shadow(0 0 36px rgba(201,162,39,.22))}
+.splash-bottom{padding:0 22px calc(22px + env(safe-area-inset-bottom,0px));flex-shrink:0}
+.offer{
+  position:relative;overflow:hidden;display:flex;margin-bottom:14px;
+  border:1px solid rgba(201,162,39,.7);border-radius:6px;
+  background:linear-gradient(135deg,rgba(23,64,43,.95),rgba(8,20,14,.96));
+  box-shadow:0 0 0 3px rgba(7,11,8,.9),0 0 0 4px rgba(201,162,39,.25),0 10px 30px rgba(0,0,0,.5);
+}
+.offer::after{
+  content:"";position:absolute;top:0;bottom:0;left:-40%;width:30%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(230,198,106,.22),transparent);
+  transform:skewX(-18deg);animation:shine 6s ease-in-out 2.6s infinite;
+}
+@keyframes shine{0%,55%{left:-40%}100%{left:130%}}
+.offer-num{flex:0 0 26%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 4px;border-right:1.5px dashed rgba(201,162,39,.55)}
+.offer-num b{font-size:62px;line-height:.85;font-style:italic;font-weight:700;color:var(--gold-light);text-shadow:0 0 22px rgba(201,162,39,.4)}
+.offer-num span{font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--text);margin-top:4px}
+.offer-txt{padding:11px 14px 12px;min-width:0}
+.offer-kicker{font-size:14px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.offer-title{font-size:25px;line-height:1.02;font-weight:700;color:var(--text);margin:3px 0 4px}
+.offer-text{font-size:17px;line-height:1.18;color:rgba(239,230,208,.82)}
+/* ——— Hero (full-height photo, no longer used on home) ——— */
+.hero{position:relative;flex:1;min-height:0;overflow:hidden;background:var(--black)}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 100%;display:block}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(to bottom, rgba(5,10,7,.97) 0%, rgba(10,34,22,.86) 24%, rgba(10,34,22,.35) 38%, rgba(10,34,22,0) 48%);
+}
+.hero .head{position:absolute;top:0;left:0;right:0;padding:calc(16px + env(safe-area-inset-top,0px)) 22px 0;z-index:2}
+.hero-top{position:absolute;left:0;right:0;top:calc(66px + env(safe-area-inset-top,0px));padding:0 26px;text-align:center;z-index:2}
+.hero h1{font-size:clamp(38px,12vw,56px);font-weight:600;line-height:.95;letter-spacing:-.01em;color:var(--gold-light);margin-bottom:10px}
+.hero-sub{font-style:italic;font-size:clamp(18px,4.8vw,21px);line-height:1.2;color:var(--text);max-width:330px;margin:0 auto}
+.hero-bottom{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:110px 22px calc(18px + env(safe-area-inset-bottom,0px));
+  background:linear-gradient(to top, rgba(5,10,7,.97) 0%, rgba(8,24,16,.88) 52%, rgba(8,24,16,0) 100%);
+}
+.raffle{
+  border:1px solid rgba(201,162,39,.6);border-radius:3px;padding:9px 14px 10px;
+  margin-bottom:14px;text-align:center;color:rgba(239,230,208,.85);background:rgba(14,42,28,.55);
+}
+.raffle strong{display:block;font-size:21px;font-weight:700;color:var(--gold-light);line-height:1.1}
+.raffle span{display:block;font-size:16px;line-height:1.2;margin-top:2px}
+
+/* ——— Step 1: arched cards ——— */
+h2{font-size:clamp(32px,9vw,40px);font-weight:600;line-height:1;color:var(--gold-light);flex-shrink:0}
+.sub{font-style:italic;font-size:18px;color:var(--mute);margin:6px 0 12px;flex-shrink:0}
+.scents-wrap{flex:1;min-height:0;display:flex;flex-direction:column}
+.scents{
+  flex:1;min-height:0;display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,300px);
+  grid-template-rows:minmax(0,1fr);gap:14px;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;margin:0 -22px;padding:4px 22px 12px;scroll-padding-inline:22px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+}
+.scents::-webkit-scrollbar{display:none}
+.scent{
+  position:relative;scroll-snap-align:start;text-align:left;min-height:0;
+  display:flex;flex-direction:column;overflow:hidden;
+  padding:0;background:var(--c);border:1.5px solid color-mix(in srgb,var(--b) 55%,transparent);border-radius:34px 34px 6px 6px;
+  transition:border-color .5s var(--ease), box-shadow .6s var(--ease), transform .6s var(--ease);
+}
+.scent.sel{border-color:var(--b);box-shadow:0 0 0 1px var(--b),0 14px 30px rgba(0,0,0,.6),0 0 34px var(--g)}
+.scent .pic{flex:1;min-height:0;background:#111}
+.scent .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
+.scent .meta{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px 12px;flex-shrink:0}
+.scent h3{font-size:30px;font-style:italic;font-weight:600;line-height:1;color:var(--text)}
+.scent small{display:block;font-size:16px;color:var(--bl);opacity:.8;margin-top:2px}
+.scent .check{width:28px;height:28px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--b) 60%,transparent);display:grid;place-items:center;flex-shrink:0;color:transparent}
+.scent.sel .check{background:var(--b);border-color:var(--b);color:#0a0a0a}
+.check svg{width:15px;height:15px}
+.hint-swipe{text-align:center;color:var(--gold-light);font-style:italic;font-size:18px;font-weight:600;flex-shrink:0}
+.link-back{display:block;margin:4px auto 0;padding:4px 14px;color:var(--mute);font-size:17px;font-style:italic;text-decoration:underline;text-underline-offset:3px;flex-shrink:0}
+
+/* ——— Step 2 ——— */
+.channels{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 10px;flex-shrink:0}
+.channel{
+  display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 4px 6px;
+  border:1px solid var(--line);border-radius:3px;background:var(--jungle);font-size:16px;font-weight:600;color:var(--mute);
+}
+.channel img{width:24px;height:24px;display:block;filter:brightness(0) invert(.62)}
+.channel.sel{background:var(--jungle-3);border-color:var(--gold);color:var(--gold-light);box-shadow:0 0 0 1px rgba(201,162,39,.5)}
+.channel.sel img{filter:brightness(0) invert(.88) sepia(.5) saturate(3) hue-rotate(2deg)}
+label{display:block;font-size:17px;font-style:italic;color:var(--mute);margin:0 0 4px;flex-shrink:0}
+.field{background:var(--jungle);border:1px solid var(--line);border-radius:3px;flex-shrink:0}
+.field{position:relative;transition:border-color .5s var(--ease),box-shadow .5s var(--ease)}
+.field:focus-within{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 0 24px rgba(201,162,39,.18)}
+.field input{width:100%;border:0;background:transparent;padding:11px 14px;outline:none;font-size:22px;font-weight:600;color:var(--text)}
+.field input::placeholder{color:#5f6b5c;font-weight:500}
+.err{color:var(--err);font-size:16px;min-height:20px;margin-top:2px;flex-shrink:0}
+
+.sum{background:var(--jungle);border:1px solid var(--line);border-radius:3px;padding:8px 16px;margin-top:2px;flex-shrink:0}
+.sum b{display:block;font-size:22px;font-style:italic;font-weight:600;color:var(--gold-light);margin-bottom:4px}
+.row{display:flex;align-items:baseline;gap:8px;margin:2px 0;font-size:18px}
+.row i{flex:1;border-bottom:1px dotted rgba(201,162,39,.4);transform:translateY(-4px);min-width:12px}
+.row span:first-child{color:var(--mute)}
+.row span:last-child{font-weight:600;text-align:right;color:var(--text)}
+.row.total{margin-top:6px;padding-top:4px;border-top:1px solid var(--line)}
+.row.total span:first-child{color:var(--text);font-weight:600}
+.row.total span:last-child{font-size:26px;font-weight:700;color:var(--gold-light)}
+
+.nav{
+  position:fixed;left:0;right:0;bottom:0;background:rgba(7,11,8,.96);backdrop-filter:blur(10px);
+  border-top:1px solid var(--line);padding:12px 22px calc(12px + env(safe-area-inset-bottom,0px));
+}
+.nav-inner{max-width:480px;margin:0 auto;display:flex;gap:10px}
+.nav .btn{flex:1}
+.nav .back-btn{flex:0 0 auto;width:auto;padding:14px 20px}
+
+/* ——— Step 3: paper receipt ——— */
+.receipt-screen{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;overflow-y:auto;overflow-x:hidden;padding-bottom:4px;scrollbar-width:none}
+.receipt-screen::-webkit-scrollbar{display:none}
+.slot{
+  position:relative;z-index:3;flex-shrink:0;width:min(100%,360px);height:16px;border-radius:9px;
+  background:linear-gradient(#000,#16241c);
+  box-shadow:inset 0 4px 6px #000,0 1px 0 rgba(201,162,39,.35),0 6px 14px rgba(0,0,0,.5);
+}
+.feed{width:min(100%,326px);margin-top:-8px;flex-shrink:0;clip-path:inset(8px -60px -90px -60px)}
+.sheet-wrap{
+  filter:drop-shadow(0 2px 1.5px rgba(0,0,0,.4)) drop-shadow(0 18px 18px rgba(0,0,0,.5));
+  animation:print 1.9s cubic-bezier(.3,.7,.25,1) both;
+}
+@keyframes print{from{transform:translateY(-104%)}to{transform:translateY(0) rotate(-.5deg)}}
+.sheet{
+  position:relative;color:#2b2218;padding:24px 22px 40px;
+  background:
+    linear-gradient(90deg, rgba(120,90,40,.07), transparent 7%, transparent 93%, rgba(120,90,40,.07)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .38  0 0 0 0 .3  0 0 0 0 .18  0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#fdf9f0,#f5eddb);
+  -webkit-mask:linear-gradient(#000,#000) top/100% calc(100% - 9px) no-repeat,
+               conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 9px repeat-x;
+          mask:linear-gradient(#000,#000) top/100% calc(100% - 9px) no-repeat,
+               conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 9px repeat-x;
+}
+.r-logo{display:block;height:38px;width:auto;margin:0 auto 4px}
+.r-brand{text-align:center;font-size:22px;font-weight:700;letter-spacing:.34em;text-indent:.34em;color:#6e5316}
+.r-tag{text-align:center;font-style:italic;font-size:16px;color:#7b6f5b}
+.r-title{text-align:center;font-size:30px;font-style:italic;font-weight:600;line-height:1;margin:12px 0 2px}
+.r-meta{text-align:center;font-size:16px;color:#7b6f5b}
+.tear{border:0;border-top:1.5px dashed #c9bda6;margin:12px 0}
+.tear.solid{border-top:1px solid #cfc3ab}
+.r-row{display:flex;align-items:baseline;gap:8px;font-size:18px;margin:4px 0}
+.r-row i{flex:1;border-bottom:1px dotted #b9ad94;transform:translateY(-4px);min-width:10px}
+.r-row .l{color:#6f6451}
+.r-row .v{font-weight:600;text-align:right}
+.r-total{display:flex;justify-content:space-between;align-items:baseline}
+.r-total .l{font-size:22px;font-weight:700}
+.r-total .v{font-size:32px;font-weight:700;color:#6e5316}
+.r-grazie{text-align:center;font-size:34px;font-style:italic;font-weight:600;line-height:1;margin-top:2px}
+.r-note{text-align:center;font-size:17px;line-height:1.25;color:#6f6451;margin-top:6px}
+.r-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+.bc{flex:0 0 46%}
+.barcode{
+  height:44px;width:100%;opacity:.85;
+  background:repeating-linear-gradient(90deg,#2b2218 0 2px,transparent 2px 4px,#2b2218 4px 5px,transparent 5px 8px,#2b2218 8px 11px,transparent 11px 12px,#2b2218 12px 13px,transparent 13px 17px,#2b2218 17px 19px,transparent 19px 21px);
+}
+.r-code{text-align:center;font-size:13px;letter-spacing:.14em;color:#7b6f5b;margin-top:3px;white-space:nowrap}
+.stamp{
+  flex:1;min-width:0;text-align:center;transform:rotate(-9deg);
+  border:3px double var(--jungle-3);color:var(--jungle-3);border-radius:4px;
+  padding:5px 2px 6px;font-size:15px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;line-height:1.05;
+  mix-blend-mode:multiply;opacity:.88;animation:stamp .32s cubic-bezier(.3,1.4,.5,1) 1.95s both;
+}
+@keyframes stamp{from{transform:rotate(-9deg) scale(2);opacity:0}to{transform:rotate(-9deg) scale(1);opacity:.88}}
+.receipt-actions{width:min(100%,326px);margin-top:20px;flex-shrink:0}
+
+.status{margin-top:22px;text-align:center;color:var(--text);font-size:22px;font-style:italic}
+.status.fail{font-style:normal}
+.status h3{font-size:30px;font-weight:600;margin-bottom:4px;color:var(--gold-light)}
+.status p{font-size:18px;color:rgba(239,230,208,.78);margin-bottom:16px}
+.fail-actions{display:flex;flex-direction:column;gap:10px;width:min(100%,326px);margin:0 auto}
+
+
+/* ——— Участники и лоадер ——— */
+.joined{display:inline-flex;align-items:baseline;gap:6px;margin-top:6px;font-size:17px;color:var(--gold-light);font-weight:600}
+.joined b{font-size:22px;font-style:italic;font-weight:700}
+.joined[hidden]{display:none}
+#app.loading{padding:0}
+.loader{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
+.loader img{width:min(46%,190px);height:auto;animation:loaderPulse 1.6s ease-in-out infinite}
+.loader p{font-style:italic;font-size:20px;color:var(--mute)}
+.loader .bar{width:min(46%,190px);height:2px;background:rgba(201,162,39,.2);overflow:hidden;border-radius:2px}
+.loader .bar::after{content:"";display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform-origin:left;animation:loaderBar 3s linear forwards}
+@keyframes loaderPulse{0%,100%{opacity:.55;transform:scale(.97);filter:drop-shadow(0 0 14px rgba(201,162,39,.15))}50%{opacity:1;transform:scale(1);filter:drop-shadow(0 0 34px rgba(201,162,39,.45))}}
+@keyframes loaderBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.r-num{text-align:center;margin:2px 0 4px}
+.r-num small{display:block;font-size:16px;color:#7b6f5b;font-style:italic}
+.r-num b{display:block;font-size:56px;line-height:1;font-style:italic;font-weight:700;color:#6e5316}
+.r-num span{font-size:17px;color:#6f6451}
+/* ——— Motion: сдержанные, медленные, точные движения ——— */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes logoIn{
+  0%{opacity:0;transform:scale(.94);filter:blur(10px) brightness(1.9) drop-shadow(0 0 40px rgba(201,162,39,.45))}
+  55%{opacity:1}
+  100%{opacity:1;transform:none;filter:blur(0) brightness(1) drop-shadow(0 0 36px rgba(201,162,39,.22))}
+}
+@keyframes lineDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes navUp{from{transform:translateY(100%);opacity:0}to{transform:none;opacity:1}}
+@keyframes pop{0%{transform:scale(.3);opacity:0}60%{transform:scale(1.18);opacity:1}100%{transform:scale(1)}}
+@keyframes selFlash{0%{opacity:0}25%{opacity:1}100%{opacity:0}}
+@keyframes chanIn{from{transform:scale(.94)}to{transform:none}}
+
+/* уход со старого шага */
+#app>*{transition:opacity .26s ease,transform .26s var(--ease)}
+#app.leaving>*{opacity:0;transform:translateY(-10px);pointer-events:none}
+#app.leaving>.nav{transform:translateY(40%)}
+
+/* выбор: подсветка карточки и канала */
+.scent.sel::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  box-shadow:inset 0 0 0 2px var(--b),inset 0 0 46px var(--g);animation:selFlash .9s ease-out both}
+.scent.sel .check{animation:pop .55s var(--ease) backwards}
+.channel.sel{animation:chanIn .5s var(--ease) backwards}
+@media (hover:hover){
+  .scent:hover{transform:translateY(-4px)}
+  .channel:hover{border-color:rgba(201,162,39,.6)}
+}
+
+/* появление при входе на шаг */
+.anim .head{animation:fade 1.1s ease backwards}
+.anim .splash-logo{animation:logoIn 1.9s var(--ease) .1s backwards}
+.anim .offer{animation:rise 1.1s var(--ease) .9s backwards}
+.anim .splash-bottom .btn{animation:rise 1.1s var(--ease) 1.15s backwards}
+
+.anim .prog div.on::before{animation:lineDraw 1.2s var(--ease) .2s backwards}
+.anim .prog div{animation:fade .8s ease backwards}
+.anim h2{animation:rise .95s var(--ease) .1s backwards}
+.anim .sub{animation:rise .95s var(--ease) .2s backwards}
+.anim .scent{animation:rise 1.05s var(--ease) calc(.3s + var(--i,0)*.15s) backwards}
+.anim .hint-swipe{animation:rise .9s var(--ease) .85s backwards}
+.anim .link-back{animation:fade 1s ease 1s backwards}
+
+.anim .channel{animation:rise .85s var(--ease) calc(.25s + var(--i,0)*.07s) backwards}
+.anim label{animation:fade .8s ease .55s backwards}
+.anim .field{animation:rise .95s var(--ease) .6s backwards}
+.anim .sum{animation:rise .95s var(--ease) .75s backwards}
+.anim .sum b{animation:fade .8s ease .95s backwards}
+.anim .sum .row{animation:fade .8s ease backwards}
+.anim .sum .row:nth-child(2){animation-delay:1.05s}
+.anim .sum .row:nth-child(3){animation-delay:1.13s}
+.anim .sum .row:nth-child(4){animation-delay:1.21s}
+.anim .sum .row:nth-child(5){animation-delay:1.29s}
+.anim .sum .row:nth-child(6){animation-delay:1.4s}
+.anim .nav{animation:navUp 1s var(--ease) .55s backwards}
+
+.anim .slot{animation:fade .7s ease backwards}
+.anim .status{animation:fade 1s ease .35s backwards}
+.anim .fail-actions{animation:rise .95s var(--ease) .5s backwards}
+.receipt-actions{animation:rise 1s var(--ease) 2.5s backwards}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .sheet-wrap{animation:none;transform:rotate(-.5deg)}
+  .stamp{animation:none}
+  .offer::after{animation:none;display:none}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const VARIANTS = [
+  {id:"amethyst", name:"Amethyst", tagline:"Warm, mineral, soft",  img:"assets/products/amethyst.webp", c:"#24113a", b:"#9a68cf", bl:"#cdb1ee", g:"rgba(154,104,207,.45)"},
+  {id:"obsidian", name:"Obsidian", tagline:"Dark, smoky, warm",    img:"assets/products/obsidian.webp", c:"#121212", b:"#9a9a94", bl:"#d2d0ca", g:"rgba(190,190,180,.32)"},
+  {id:"glacier",  name:"Glacier",  tagline:"Cool, clean, marine",  img:"assets/products/glacier.webp", c:"#0c2740", b:"#5eaee0", bl:"#acd8f4", g:"rgba(94,174,224,.42)"}
+];
+const CHANNELS = [
+  {id:"Telegram", icon:"assets/icons/telegram.svg"},
+  {id:"WhatsApp", icon:"assets/icons/whatsapp.svg"},
+  {id:"Facebook", icon:"assets/icons/facebook.svg"},
+  {id:"Email",    icon:"assets/icons/mail.svg"}
+];
+const CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>';
+
+const $ = document.getElementById("app");
+const S = { step:0, v:{ variant:null, channel:"Telegram", contact:"" }, order:null };
+let SEND = null, contactTouched = false, COUNT = null;
+
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
+
+function contactValid(){
+  const c = S.v.contact.trim();
+  if(!c) return false;
+  if(S.v.channel==="Email") return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c);
+  if(S.v.channel==="WhatsApp") return /^[\d+\s()-]{8,}$/.test(c);
+  return c.length >= 2;
+}
+
+function orderData(){
+  const v = VARIANTS.find(x=>x.id===S.v.variant);
+  return {
+    variant: v ? v.name : S.v.variant,
+    pack: "70 g × 1",
+    price: "1000 THB",
+    payment: "Cash on delivery",
+    delivery: "Free",
+    channel: S.v.channel,
+    contact: S.v.contact.trim(),
+    lang: "ru"
+  };
+}
+
+async function sendOrder(){
+  if(SEND==="sending") return;
+  SEND="sending"; render();
+  await doSend();
+}
+const wait = ms => new Promise(r=>setTimeout(r,ms));
+async function doSend(){
+  const send = (async()=>{
+    try{
+      const r = await fetch("/api/order",{
+        method:"POST", headers:{"content-type":"application/json"},
+        body: JSON.stringify(orderData()), signal: AbortSignal.timeout(10000)
+      });
+      const result = await r.json();
+      if(r.ok && result.ok){
+        // без KV на сервере номер не приходит — подставляем случайный 1–100 (только для песочницы)
+        S.order.num = result.number || (1 + Math.floor(Math.random()*100));
+        if(result.count) COUNT = result.count;
+        return "ok";
+      }
+      return "fail";
+    }catch{ return "fail"; }
+  })();
+  // лоадер с логотипом показываем минимум 3 секунды
+  const [res] = await Promise.all([send, wait(3000)]);
+  SEND = res;
+  render();
+}
+
+async function loadCount(){
+  try{
+    const r = await fetch("/api/count",{cache:"no-store"});
+    const d = await r.json();
+    if(d && typeof d.count==="number"){ COUNT = d.count; paintCount(); }
+  }catch{}
+}
+function paintCount(){
+  const el = document.getElementById("joined");
+  if(!el || COUNT===null) return;
+  el.hidden = false;
+  el.innerHTML = `Уже участвуют: <b>${COUNT}</b> из 100`;
+}
+
+function newOrder(){
+  const d = new Date();
+  const no = String(Math.floor(1000 + Math.random()*9000));
+  return {
+    no,
+    code: "ST-" + no + "-" + String(d.getFullYear()).slice(2) + String(d.getMonth()+1).padStart(2,"0") + String(d.getDate()).padStart(2,"0"),
+    date: d.toLocaleDateString("ru-RU",{day:"2-digit",month:"long",year:"numeric"}),
+    time: d.toLocaleTimeString("ru-RU",{hour:"2-digit",minute:"2-digit"})
+  };
+}
+
+const REDUCED = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+let busy = false;
+// Плавный переход между шагами: старый экран уходит, новый появляется по очереди
+function transition(change, after){
+  if(busy) return;
+  busy = true;
+  const run = ()=>{ change(); render(); busy = false; if(after) after(); };
+  if(REDUCED){ run(); return; }
+  $.classList.add("leaving");
+  setTimeout(run, 260);
+}
+
+function dispatch(a, val){
+  if(a==="START") return transition(()=>{ S.step=1; });
+  if(a==="NEXT") return transition(()=>{ if(S.step===1 && S.v.variant) S.step=2; });
+  if(a==="BACK") return transition(()=>{ if(S.step>0) S.step--; });
+  if(a==="RESET") return transition(()=>{ S.step=0; S.v={variant:null,channel:"Telegram",contact:""}; S.order=null; SEND=null; contactTouched=false; });
+  if(a==="VARIANT"){
+    if(busy) return;
+    S.v.variant = val;
+    document.querySelectorAll(".scent").forEach(el=>{
+      const on = el.dataset.id===val;
+      el.classList.toggle("sel", on);
+      el.setAttribute("aria-selected", on);
+    });
+    setTimeout(()=>{ if(S.step===1 && S.v.variant===val) transition(()=>{ S.step=2; }); }, 520);
+    return;
+  }
+  if(a==="CHANNEL"){ S.v.channel = val; contactTouched=false; render(); return; }
+  if(a==="SUBMIT"){
+    contactTouched = true;
+    if(S.v.variant && contactValid()){
+      return transition(()=>{ S.step=3; S.order=newOrder(); SEND="sending"; }, ()=>doSend());
+    }
+    updateContact();
+  }
+}
+
+function head(){
+  return `<div class="head">
+    <img class="wordmark" src="assets/logo-text.webp" alt="STEALTH" height="15">
+    <div class="badge">Phuket</div>
+  </div>`;
+}
+
+function view(){
+  if(S.step===0){
+    return `<div class="splash">
+      <div class="splash-main"><img class="splash-logo" src="assets/logo-large.webp" alt="STEALTH" width="520" height="400"></div>
+      <div class="splash-bottom">
+        <div class="offer">
+          <div class="offer-num"><b>1</b><span>из 100</span></div>
+          <div class="offer-txt">
+            <div class="offer-kicker">Лимитированная коллекция</div>
+            <div class="offer-title">Шанс выиграть iPhone 18</div>
+            <div class="offer-text">Купите одну упаковку из 100 и участвуйте в розыгрыше на Пхукете.</div>
+            <div class="joined" id="joined" hidden></div>
+          </div>
+        </div>
+        <button class="btn" onclick="dispatch('START')">Выбрать аромат</button>
+      </div>
+    </div>`;
+  }
+
+  if(S.step===1){
+    return `<h2>Выберите аромат</h2>
+    <p class="sub">Стик 70 г. Листайте — следующий аромат уже виден.</p>
+    <div class="scents-wrap">
+      <div class="scents" role="listbox">
+        ${VARIANTS.map((v,i)=>`
+          <button class="scent ${S.v.variant===v.id?"sel":""}" data-id="${v.id}" style="--i:${i};--c:${v.c};--b:${v.b};--bl:${v.bl};--g:${v.g}" role="option" aria-selected="${S.v.variant===v.id}" onclick="dispatch('VARIANT','${v.id}')">
+            <div class="pic"><img src="${v.img}" alt="${esc(v.name)}" width="310" height="388"></div>
+            <div class="meta">
+              <div><h3>${esc(v.name)}</h3><small>${esc(v.tagline)}</small></div>
+              <span class="check">${CHECK}</span>
+            </div>
+          </button>
+        `).join("")}
+      </div>
+      <p class="hint-swipe">Выберите аромат, чтобы продолжить</p>
+      <button class="link-back" onclick="dispatch('BACK')">Назад</button>
+    </div>`;
+  }
+
+  if(S.step===2){
+    const v = VARIANTS.find(x=>x.id===S.v.variant);
+    const ph = S.v.channel==="WhatsApp" ? "+66 8X XXX XXXX" :
+               S.v.channel==="Email" ? "name@email.com" :
+               S.v.channel==="Facebook" ? "facebook.com/username" : "@username";
+    return `<h2>Оставить заявку</h2>
+    <p class="sub">Менеджер ответит в выбранном канале.</p>
+    <div class="channels">
+      ${CHANNELS.map((c,i)=>`
+        <button class="channel ${S.v.channel===c.id?"sel":""}" style="--i:${i}" onclick="dispatch('CHANNEL','${c.id}')">
+          <img src="${c.icon}" alt="" width="24" height="24">${c.id}
+        </button>
+      `).join("")}
+    </div>
+    <label for="contact">${S.v.channel}</label>
+    <div class="field">
+      <input id="contact" type="${S.v.channel==="Email"?"email":S.v.channel==="WhatsApp"?"tel":"text"}"
+        placeholder="${ph}" value="${esc(S.v.contact)}" maxlength="200" autocomplete="off"
+        oninput="S.v.contact=this.value;updateContact()" onblur="contactTouched=true;updateContact()">
+    </div>
+    <div id="contact-error" class="err"></div>
+    <div class="sum">
+      <b>Ваш заказ</b>
+      <div class="row"><span>Аромат</span><i></i><span>${v?esc(v.name):"—"}</span></div>
+      <div class="row"><span>Объём</span><i></i><span>70 г × 1</span></div>
+      <div class="row"><span>Оплата</span><i></i><span>При получении</span></div>
+      <div class="row"><span>Доставка</span><i></i><span>Бесплатно</span></div>
+      <div class="row total"><span>Итого</span><span>1 000 THB</span></div>
+    </div>`;
+  }
+
+  if(S.step===3){
+    const v = VARIANTS.find(x=>x.id===S.v.variant);
+    const o = S.order || newOrder();
+
+    if(SEND==="sending"){
+      return `<div class="loader"><img src="assets/logo-mark.webp" alt="STEALTH"><div class="bar"></div><p>Отправляем вашу заявку…</p></div>`;
+    }
+
+    if(SEND==="ok"){
+      return `<div class="receipt-screen">
+        <div class="slot"></div>
+        <div class="feed"><div class="sheet-wrap"><div class="sheet">
+          <img class="r-logo" src="assets/logo-mark.webp" alt="" height="38">
+          <div class="r-brand">STEALTH</div>
+          <div class="r-tag">Natural deodorant, Phuket</div>
+          <div class="r-title">Чек заказа</div>
+          <div class="r-meta">${esc(o.date)}, ${esc(o.time)}</div>
+          <hr class="tear">
+          <div class="r-num"><small>Ваш номер заявки</small><b>${o.num}</b><span>из 100</span></div>
+          <hr class="tear">
+          <div class="r-row"><span class="l">Аромат</span><i></i><span class="v">${v?esc(v.name):"—"}</span></div>
+          <div class="r-row"><span class="l">Объём</span><i></i><span class="v">70 г × 1</span></div>
+          <div class="r-row"><span class="l">Доставка</span><i></i><span class="v">Бесплатно</span></div>
+          <div class="r-row"><span class="l">Оплата</span><i></i><span class="v">При получении</span></div>
+          <hr class="tear solid">
+          <div class="r-total"><span class="l">Итого</span><span class="v">1 000 THB</span></div>
+          <hr class="tear">
+          <div class="r-grazie">Grazie</div>
+          <div class="r-note">Розыгрыш iPhone 18 пройдёт 20 октября. Наш менеджер скоро свяжется с вами в ${esc(S.v.channel)}.</div>
+          <div class="r-foot">
+            <div class="bc"><div class="barcode"></div><div class="r-code">${esc(o.code)}</div></div>
+            <div class="stamp">Подтверждено</div>
+          </div>
+        </div></div></div>
+        <div class="receipt-actions"><button class="btn ghost" onclick="dispatch('RESET')">На главную</button></div>
+      </div>`;
+    }
+
+    const msg = encodeURIComponent("Здравствуйте! Хочу STEALTH " + orderData().variant + ", 70 г. Оплата 1000 THB при получении. Контакт: " + S.v.contact);
+    return `<div class="receipt-screen">
+      <div class="slot"></div>
+      <div class="status fail">
+        <h3>Не удалось отправить</h3>
+        <p>Повторите попытку или напишите нам в мессенджере.</p>
+      </div>
+      <div class="fail-actions">
+        <button class="btn" onclick="sendOrder()">Повторить</button>
+        <a class="btn ghost" href="https://t.me/share/url?url=&text=${msg}" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn ghost" href="https://wa.me/?text=${msg}" target="_blank" rel="noopener">WhatsApp</a>
+        <button class="btn ghost" onclick="dispatch('RESET')">На главную</button>
+      </div>
+    </div>`;
+  }
+  return "";
+}
+
+function nav(){
+  if(S.step===0 || S.step===1 || S.step===3) return "";
+  const nextLabel = S.step===2 ? "Отправить заявку" : "Далее";
+  const nextAction = S.step===2 ? "SUBMIT" : "NEXT";
+  const disabled = S.step===1 ? !S.v.variant : !contactValid();
+  return `<div class="nav"><div class="nav-inner">
+    <button class="btn ghost back-btn" onclick="dispatch('BACK')">Назад</button>
+    <button class="btn" id="sub" ${disabled?"disabled":""} onclick="dispatch('${nextAction}')">${nextLabel}</button>
+  </div></div>`;
+}
+
+function updateContact(){
+  const err = document.getElementById("contact-error");
+  const btn = document.getElementById("sub");
+  if(err) err.textContent = contactTouched && !contactValid() ? "Проверьте контакт" : "";
+  if(btn && S.step===2) btn.disabled = !contactValid();
+}
+
+let lastStep = -1;
+function render(){
+  const changed = S.step !== lastStep; lastStep = S.step;
+  const inner = S.step===1 || S.step===2;
+  $.className = (S.step===0 ? "home" : (S.step===3 ? (SEND==="sending" ? "loading" : "paper-bg") : (S.step===1 ? "no-nav" : ""))) + (changed ? " anim" : "");
+  $.innerHTML =
+    (S.step===0 || S.step===3 ? "" : head()) +
+    (inner ? `<div class="prog"><div class="on">I. Аромат</div><div class="${S.step>=2?"on":""}">II. Заявка</div></div>` : "") +
+    `<div class="main">${view()}</div>` + nav();
+  if(S.step===2){
+    updateContact();
+    if(changed){
+      const i = document.getElementById("contact");
+      if(i) i.focus({preventScroll:true});
+    }
+  }
+  if(S.step===0) paintCount();
+}
+
+render();
+loadCount();
+</script>
+</body>
+</html>
