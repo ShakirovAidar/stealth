@@ -1,9 +1,9 @@
 {
-  "name": "stealth-tetra",
+  "name": "stealth",
   "main": "src/worker.js",
   "compatibility_date": "2026-10-01",
   "kv_namespaces": [
-    { "binding": "COUNTER", "id": "REPLACE_WITH_KV_NAMESPACE_ID" }
+    { "binding": "COUNTER", "id": "2b9bf4c2e921438f95f2494e3e5b6384" }
   ],
   "assets": {
     "directory": "./",
