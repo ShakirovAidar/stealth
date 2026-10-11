@@ -1,0 +1,28 @@
+:root{--black:#070b08;--jungle:#0e2a1c;--gold:#c9a227;--gold-light:#e6c66a;--text:#efe6d0;--mute:#9d9577;--line:rgba(201,162,39,.28);
+  --font:"Cormorant Garamond","Cormorant",Garamond,Georgia,serif}
+*{box-sizing:border-box;margin:0}
+html{background:#040604}
+body{font-family:var(--font);font-size:19px;line-height:1.45;font-weight:500;color:var(--text);min-height:100vh;
+  background:radial-gradient(ellipse 120% 40% at 50% -10%,rgba(31,90,58,.38),transparent 65%),var(--black);
+  -webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums}
+.wrap{max-width:720px;margin:0 auto;padding:calc(18px + env(safe-area-inset-top,0px)) 22px calc(48px + env(safe-area-inset-bottom,0px))}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:34px}
+.top img{height:26px;width:auto;display:block}
+.lang{display:inline-grid;grid-template-columns:1fr 1fr;position:relative;padding:2px;border-radius:999px;border:1px solid rgba(201,162,39,.6);background:rgba(7,11,8,.72)}
+.lang::before{content:"";position:absolute;top:2px;bottom:2px;left:2px;width:calc(50% - 2px);border-radius:999px;background:linear-gradient(180deg,#e6c66a,#b8921f);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.lang[data-l="en"]::before{transform:translateX(100%)}
+.lang button{position:relative;z-index:1;min-width:42px;padding:3px 0 4px;font:inherit;font-size:15px;font-weight:700;letter-spacing:.08em;color:var(--mute);background:none;border:0;cursor:pointer}
+.lang button.on{color:var(--black)}
+h1{font-size:clamp(34px,8vw,48px);line-height:1;font-weight:600;color:var(--gold-light);margin-bottom:6px}
+.upd{font-style:italic;color:var(--mute);margin-bottom:28px;font-size:17px}
+h2{font-size:26px;font-weight:600;color:var(--gold-light);margin:30px 0 6px;line-height:1.1}
+p,li{color:rgba(239,230,208,.9)}
+p{margin:0 0 10px}
+ul{padding-left:22px;margin:0 0 10px}
+li{margin:3px 0}
+a{color:var(--gold-light);text-underline-offset:3px}
+.note{margin-top:30px;padding:14px 16px;border:1px solid var(--line);border-radius:4px;background:rgba(14,42,28,.55);font-size:17px}
+.links{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-style:italic;font-size:17px}
+.links a{color:var(--mute)}
+[data-lang="ru"] [data-l="en"]:not(button),[data-lang="en"] [data-l="ru"]:not(button){display:none}
+.credit{margin-top:26px;text-align:center;font-size:15px;font-style:italic;color:var(--mute);letter-spacing:.02em}

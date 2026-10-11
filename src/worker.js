@@ -78,7 +78,11 @@ export default {
         ? `https://wa.me/${order.contact.replace(/\D/g, "")}`
         : order.channel === "Email"
         ? `mailto:${order.contact}`
-        : order.contact;
+        : order.channel === "Telegram"
+        ? `https://t.me/${order.contact.replace(/^@/, "")}`
+        : /^https?:\/\//i.test(order.contact)
+        ? order.contact
+        : `https://${order.contact}`;
 
     const current = await getCount(env);
     const number = current === null ? null : current + 1;
