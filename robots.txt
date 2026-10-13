@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /api/
-
-Sitemap: https://stealth.aidar-crypto2000.workers.dev/sitemap.xml
