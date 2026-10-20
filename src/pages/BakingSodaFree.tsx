@@ -13,7 +13,7 @@ export default function BakingSodaFree() {
         A natural deodorant without baking soda, made for comfortable everyday wear.
       </p>
       <p className="mt-3 text-text">
-        STEALTH uses a magnesium-based odor-control system instead — with 0% baking soda and no
+        STEALTH uses a magnesium-based odor-control system instead — with no baking soda and no
         aluminum salts.
       </p>
 
@@ -28,9 +28,9 @@ export default function BakingSodaFree() {
       </section>
 
       <section className="mt-12 space-y-4">
-        <h2 className="text-xl font-semibold">STEALTH: 0% Baking Soda</h2>
+        <h2 className="text-xl font-semibold">STEALTH: No Baking Soda</h2>
         <p className="text-text">
-          STEALTH contains <strong>0% baking soda</strong>. Instead of relying on sodium
+          STEALTH contains <strong>no baking soda</strong>. Instead of relying on sodium
           bicarbonate, our formula uses magnesium hydroxide and triethyl citrate as part of its
           odor-control system.
         </p>
@@ -89,7 +89,7 @@ export default function BakingSodaFree() {
         <h2 className="text-xl font-semibold">Baking Soda-Free: Common Questions</h2>
         <div>
           <h3 className="font-semibold">Is STEALTH completely free of baking soda?</h3>
-          <p className="mt-1 text-base text-text">Yes. STEALTH contains 0% baking soda.</p>
+          <p className="mt-1 text-base text-text">Yes. STEALTH contains no baking soda.</p>
         </div>
         <div>
           <h3 className="font-semibold">Why doesn't STEALTH use baking soda?</h3>

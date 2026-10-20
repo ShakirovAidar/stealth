@@ -26,7 +26,7 @@ export default function Home() {
               An everyday formula with nothing unnecessary.
             </h1>
             <p className="mb-9 max-w-md text-base leading-relaxed text-text">
-              Magnesium hydroxide. Skin-conditioning oils. Zero baking soda. Zero aluminum.
+              Magnesium hydroxide. Skin-conditioning oils. No baking soda. Zero aluminum.
               Made for heat and sensitive underarms.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -67,7 +67,7 @@ export default function Home() {
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
               { title: 'Magnesium-based', desc: 'Odor control built on magnesium hydroxide.' },
-              { title: '0% baking soda', desc: 'No sodium bicarbonate in the formula.' },
+              { title: 'No baking soda', desc: 'No sodium bicarbonate in the formula.' },
               { title: 'Aluminum-free', desc: 'Formulated without aluminum salts.' },
             ].map((item) => (
               <div key={item.title} className="border border-border bg-white p-6">
@@ -203,7 +203,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="text-text font-semibold">Does STEALTH contain baking soda?</h3>
-              <p className="mt-1 text-base text-text">No. The formula contains 0% baking soda.</p>
+              <p className="mt-1 text-base text-text">No. The formula contains no baking soda.</p>
             </div>
             <div>
               <h3 className="text-text font-semibold">Does it work in hot and humid weather?</h3>

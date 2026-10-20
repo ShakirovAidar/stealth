@@ -35,7 +35,7 @@ export default function About() {
             comfortable application.
           </li>
           <li>
-            <strong>Simplicity</strong> — No aluminum salts. 0% baking soda. Every ingredient has a
+            <strong>Simplicity</strong> — No aluminum salts. No baking soda. Every ingredient has a
             reason to be there.
           </li>
         </ul>

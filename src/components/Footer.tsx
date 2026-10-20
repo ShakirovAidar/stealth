@@ -53,7 +53,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-text">
           <p>© {new Date().getFullYear()} STEALTH. Developed in Phuket, Thailand.</p>
-          <p>0% baking soda · Aluminum-free · Magnesium-based</p>
+          <p>No baking soda · Aluminum-free · Magnesium-based</p>
         </div>
       </div>
     </footer>

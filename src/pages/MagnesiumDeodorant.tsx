@@ -26,7 +26,7 @@ export default function MagnesiumDeodorant() {
           odor-control formula, together with triethyl citrate and skin-conditioning ingredients.
         </p>
         <p className="text-text">
-          It contains <strong>no aluminum salts and 0% baking soda</strong>.
+          It contains <strong>no aluminum salts and no baking soda</strong>.
         </p>
       </section>
 
@@ -76,7 +76,7 @@ export default function MagnesiumDeodorant() {
           </div>
         </div>
         <p className="text-text mt-4">
-          That's why STEALTH uses <strong>0% baking soda</strong> and builds its odor-control
+          That's why STEALTH contains <strong>no baking soda</strong> and builds its odor-control
           system around magnesium hydroxide and triethyl citrate instead.
         </p>
       </section>
@@ -136,7 +136,7 @@ export default function MagnesiumDeodorant() {
             </h3>
             <p className="mt-1 text-base text-text">
               Not necessarily. Some magnesium deodorants may contain baking soda. STEALTH uses
-              magnesium hydroxide and contains 0% baking soda.
+              magnesium hydroxide and contains no baking soda.
             </p>
           </div>
           <div>

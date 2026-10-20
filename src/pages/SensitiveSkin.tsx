@@ -36,18 +36,18 @@ export default function SensitiveSkin() {
           odor control with oils, butters and waxes chosen for a smooth application.
         </p>
         <p className="text-text">
-          It's made without aluminum salts and contains <strong>0% baking soda</strong>.
+          It's made without aluminum salts and contains <strong>no baking soda</strong>.
         </p>
       </section>
 
       <section className="mt-12 space-y-4">
-        <h2 className="text-xl font-semibold">0% Baking Soda</h2>
+        <h2 className="text-xl font-semibold">No Baking Soda</h2>
         <p className="text-text">
           Baking soda is a common ingredient in natural deodorants, but some people find it
           uncomfortable on their skin. STEALTH takes a different approach.
         </p>
         <p className="text-text">
-          Our formula contains <strong>0% baking soda</strong>, using magnesium hydroxide and
+          Our formula contains <strong>no baking soda</strong>, using magnesium hydroxide and
           triethyl citrate as part of its odor-control system instead.
         </p>
         <Link
@@ -104,12 +104,12 @@ export default function SensitiveSkin() {
         <div>
           <h3 className="font-semibold">Is STEALTH suitable for sensitive skin?</h3>
           <p className="mt-1 text-base text-text">
-            STEALTH is designed with sensitive skin in mind, including a 0% baking soda formula.
+            STEALTH is designed with sensitive skin in mind, including a formula with no baking soda.
           </p>
         </div>
         <div>
           <h3 className="font-semibold">Does STEALTH contain baking soda?</h3>
-          <p className="mt-1 text-base text-text">No. STEALTH contains 0% baking soda.</p>
+          <p className="mt-1 text-base text-text">No. STEALTH contains no baking soda.</p>
         </div>
         <div>
           <h3 className="font-semibold">Is STEALTH aluminum-free?</h3>

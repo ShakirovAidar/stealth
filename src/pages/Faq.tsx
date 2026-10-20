@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: 'Is STEALTH suitable for sensitive skin?',
-    a: 'STEALTH is designed with sensitive skin in mind and contains 0% baking soda. The formula also includes skin-conditioning ingredients such as jojoba oil, meadowfoam seed oil, mango butter and shea butter.',
+    a: 'STEALTH is designed with sensitive skin in mind and contains no baking soda. The formula also includes skin-conditioning ingredients such as jojoba oil, meadowfoam seed oil, mango butter and shea butter.',
   },
   {
     q: 'Does STEALTH contain aluminum?',
@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: 'Does STEALTH contain baking soda?',
-    a: 'No. STEALTH contains 0% baking soda. Instead, the odor-control system uses magnesium hydroxide and triethyl citrate.',
+    a: 'No. STEALTH contains no baking soda. Instead, the odor-control system uses magnesium hydroxide and triethyl citrate.',
   },
   {
     q: 'What is magnesium hydroxide?',

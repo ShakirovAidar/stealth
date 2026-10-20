@@ -72,7 +72,7 @@ export default function Formula() {
         <h2 className="text-xl font-semibold mb-6">What's Not In the Formula</h2>
         <div className="space-y-6">
           <div>
-            <h3 className="font-semibold">0% Baking Soda</h3>
+            <h3 className="font-semibold">No Baking Soda</h3>
             <p className="mt-1 text-base text-text">
               STEALTH contains no baking soda. We use a magnesium-based odor-control system instead.
             </p>
