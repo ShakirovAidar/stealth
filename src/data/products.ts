@@ -11,8 +11,8 @@ export interface Product {
   description: string;
   price: string;
   image: string;
-  /** Background color for the product model shot */
-  bg: string;
+  /** Mineral photograph used behind the product model shot */
+  backgroundImage: string;
   scentNotes: string[];
 }
 
@@ -28,8 +28,8 @@ export const products: Product[] = [
     description:
       'Warm and mineral, with a soft floral hush. A quiet, refined scent for everyday wear.',
     price: '$29.50',
-    image: '/assets/bottle-transparent.png',
-    bg: '#f0ebe3', // warm parchment blush
+    image: '/assets/bottle-clean.png',
+    backgroundImage: '/assets/amethyst-campaign-background.png',
     scentNotes: ['Warm', 'Mineral', 'Soft floral'],
   },
   {
@@ -43,8 +43,8 @@ export const products: Product[] = [
     description:
       'Dark smoked woods with a quiet amber trail. Deeper, warmer, and made for a little more edge.',
     price: '$29.50',
-    image: '/assets/bottle-transparent.png',
-    bg: '#e8efe9', // soft sage
+    image: '/assets/bottle-clean.png',
+    backgroundImage: '/assets/obsidian-campaign-background.png',
     scentNotes: ['Smoked woods', 'Amber', 'Warm'],
   },
   {
@@ -58,8 +58,8 @@ export const products: Product[] = [
     description:
       'Cool, clean and marine. Fresh without feeling sharp — built for heat.',
     price: '$29.50',
-    image: '/assets/bottle-transparent.png',
-    bg: '#e6f0f2', // cool mist
+    image: '/assets/bottle-clean.png',
+    backgroundImage: '/assets/glacier-campaign-background.png',
     scentNotes: ['Marine', 'Clean', 'Cool'],
   },
 ];

@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 
 export default function NotFound() {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-24 text-center">
-      <h1 className="text-3xl font-semibold">Page not found</h1>
-      <p className="mt-3 text-muted">The page you’re looking for doesn’t exist.</p>
+    <div className="site-container py-24 text-center">
+      <h1 className="text-3xl font-bold">Page not found</h1>
+      <p className="mt-3 text-text">The page you’re looking for doesn’t exist.</p>
       <Link
         to="/"
-        className="mt-8 inline-flex items-center px-6 py-3 bg-primary text-white text-sm font-medium rounded-full"
+        className="mt-8 inline-flex items-center px-6 py-3 bg-action hover:bg-action-hover text-text text-sm font-medium"
       >
         Back to Home
       </Link>

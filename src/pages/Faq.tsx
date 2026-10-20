@@ -69,11 +69,11 @@ const faqs = [
 
 export default function Faq() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-      <h1 className="font-serif text-3xl md:text-4xl text-primary tracking-tight">
+    <div className="site-container article-page py-12 md:py-16">
+      <h1 className="font-sans text-3xl md:text-4xl text-text tracking-tight font-bold">
         Frequently Asked Questions
       </h1>
-      <p className="mt-4 text-muted">
+      <p className="mt-4 text-text">
         Everything you need to know about STEALTH — from how it works to shipping and returns.
       </p>
 
@@ -81,38 +81,38 @@ export default function Faq() {
         {faqs.map((item) => (
           <div key={item.q}>
             <h2 className="text-lg font-semibold">{item.q}</h2>
-            <p className="mt-2 text-sm text-muted leading-relaxed">{item.a}</p>
+            <p className="mt-2 text-base text-text leading-relaxed">{item.a}</p>
           </div>
         ))}
       </div>
 
       <section className="mt-16 border-t border-border pt-12">
         <h2 className="text-xl font-semibold mb-4">Still Have a Question?</h2>
-        <p className="text-muted text-sm">
+        <p className="text-text text-base">
           We're happy to help. Reach out via the contact email on your order confirmation, or explore
           the individual pages below.
         </p>
-        <ul className="mt-6 space-y-2 text-sm">
+        <ul className="mt-6 space-y-2 text-base">
           <li>
-            <Link to="/magnesium-deodorant" className="text-sage underline underline-offset-4">
+            <Link to="/magnesium-deodorant" className="text-text underline underline-offset-4">
               Magnesium Deodorant
             </Link>{' '}
             — How the magnesium-based formula works.
           </li>
           <li>
-            <Link to="/baking-soda-free-deodorant" className="text-sage underline underline-offset-4">
+            <Link to="/baking-soda-free-deodorant" className="text-text underline underline-offset-4">
               Baking Soda-Free Deodorant
             </Link>{' '}
             — Why STEALTH doesn't use baking soda.
           </li>
           <li>
-            <Link to="/sensitive-skin-deodorant" className="text-sage underline underline-offset-4">
+            <Link to="/sensitive-skin-deodorant" className="text-text underline underline-offset-4">
               Sensitive Skin Deodorant
             </Link>{' '}
             — More about the formula and sensitive-skin considerations.
           </li>
           <li>
-            <Link to="/formula" className="text-sage underline underline-offset-4">
+            <Link to="/formula" className="text-text underline underline-offset-4">
               The Formula
             </Link>{' '}
             — A closer look at what's inside.

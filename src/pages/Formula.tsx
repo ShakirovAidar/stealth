@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ingredients = [
@@ -43,12 +44,12 @@ const ingredients = [
 
 export default function Formula() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-      <h1 className="font-serif text-3xl md:text-4xl text-primary tracking-tight">The STEALTH Formula</h1>
-      <p className="mt-4 text-lg text-muted">
+    <div className="site-container article-page py-12 md:py-16">
+      <h1 className="font-sans text-3xl md:text-4xl text-text tracking-tight font-bold">The STEALTH Formula</h1>
+      <p className="mt-4 text-lg text-text">
         What's Inside — And What Isn't
       </p>
-      <p className="mt-3 text-muted">
+      <p className="mt-3 text-text">
         A considered formula built around magnesium hydroxide, odor control and a smooth, comfortable
         application. Every ingredient has a reason to be here.
       </p>
@@ -60,7 +61,7 @@ export default function Formula() {
             {section.items.map((item) => (
               <div key={item.name}>
                 <h3 className="font-semibold">{item.name}</h3>
-                <p className="mt-1 text-sm text-muted">{item.desc}</p>
+                <p className="mt-1 text-base text-text">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -72,23 +73,23 @@ export default function Formula() {
         <div className="space-y-6">
           <div>
             <h3 className="font-semibold">0% Baking Soda</h3>
-            <p className="mt-1 text-sm text-muted">
+            <p className="mt-1 text-base text-text">
               STEALTH contains no baking soda. We use a magnesium-based odor-control system instead.
             </p>
             <Link
               to="/baking-soda-free-deodorant"
-              className="mt-2 inline-block text-sm text-sage underline underline-offset-4"
+              className="mt-2 inline-block text-sm text-text underline underline-offset-4"
             >
-              Learn about baking-soda-free deodorant →
+              Learn about baking-soda-free deodorant <ArrowRight size={20} strokeWidth={1.5} className="inline-block shrink-0 align-middle" aria-hidden="true" />
             </Link>
           </div>
           <div>
             <h3 className="font-semibold">No Aluminum Salts</h3>
-            <p className="mt-1 text-sm text-muted">STEALTH does not use aluminum salts.</p>
+            <p className="mt-1 text-base text-text">STEALTH does not use aluminum salts.</p>
           </div>
           <div>
             <h3 className="font-semibold">No Complicated Ingredient List</h3>
-            <p className="mt-1 text-sm text-muted">
+            <p className="mt-1 text-base text-text">
               Every ingredient has a defined role — from odor control and texture to structure and
               scent. We don't add ingredients simply to make the list look impressive.
             </p>
@@ -96,9 +97,9 @@ export default function Formula() {
         </div>
       </section>
 
-      <section className="mt-12 p-6 bg-secondary rounded-xl">
+      <section className="mt-12 p-6 bg-surface-muted">
         <h2 className="text-lg font-semibold">The Full Ingredient List</h2>
-        <p className="mt-3 text-sm text-muted leading-relaxed">
+        <p className="mt-3 text-base text-text leading-relaxed">
           Magnesium Hydroxide, Triethyl Citrate, Meadowfoam Seed Oil, Jojoba Oil, Mango Butter, Shea
           Butter, MCT Oil, Beeswax, Rice Bran Wax, Spherical Silica Microspheres, Tocopherol,
           Essential Oils.
@@ -107,8 +108,8 @@ export default function Formula() {
 
       <section className="mt-12">
         <h2 className="text-xl font-semibold mb-4">Why These Ingredients?</h2>
-        <p className="text-muted mb-4">STEALTH is built around three simple priorities:</p>
-        <ul className="space-y-3 text-sm">
+        <p className="text-text mb-4">STEALTH is built around three simple priorities:</p>
+        <ul className="space-y-3 text-base">
           <li>
             <strong>Odor Control</strong> — Magnesium hydroxide and triethyl citrate form the core
             of the odor-control system.
@@ -127,7 +128,7 @@ export default function Formula() {
       <div className="mt-12 text-center">
         <Link
           to="/products"
-          className="inline-flex items-center px-6 py-3 bg-primary text-parchment text-sm font-medium rounded-full"
+          className="inline-flex items-center px-6 py-3 bg-action hover:bg-action-hover text-text text-sm font-medium"
         >
           Shop the Collection
         </Link>

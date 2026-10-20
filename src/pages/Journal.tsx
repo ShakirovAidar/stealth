@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const posts = [
@@ -33,9 +34,9 @@ const posts = [
 
 export default function Journal() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-      <h1 className="font-serif text-3xl md:text-4xl text-primary tracking-tight">Journal</h1>
-      <p className="mt-4 text-muted">
+    <div className="site-container article-page py-12 md:py-16">
+      <h1 className="font-sans text-3xl md:text-4xl text-text tracking-tight font-bold">Journal</h1>
+      <p className="mt-4 text-text">
         Educational materials on magnesium deodorant, ingredients, sensitive skin, and the thinking
         behind STEALTH.
       </p>
@@ -43,7 +44,7 @@ export default function Journal() {
       <div className="mt-12 space-y-8">
         {posts.map((post) => (
           <article key={post.title} className="border-b border-border pb-8 last:border-0">
-            <span className="text-xs font-medium uppercase tracking-wide text-muted">
+            <span className="text-xs font-medium uppercase tracking-wide text-text">
               {post.tag}
             </span>
             <h2 className="mt-2 text-xl font-semibold">
@@ -51,12 +52,12 @@ export default function Journal() {
                 {post.title}
               </Link>
             </h2>
-            <p className="mt-2 text-sm text-muted">{post.excerpt}</p>
+            <p className="mt-2 text-base text-text">{post.excerpt}</p>
             <Link
               to={post.href}
               className="mt-3 inline-block text-sm font-medium underline underline-offset-4"
             >
-              Read more →
+              Read more <ArrowRight size={20} strokeWidth={1.5} className="inline-block shrink-0 align-middle" aria-hidden="true" />
             </Link>
           </article>
         ))}
